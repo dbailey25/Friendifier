@@ -1,3 +1,7 @@
 .text {
   font-family: 'Poppins', sans-serif;
 }
+
+.label {
+  font-size: 22px;
+}

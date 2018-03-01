@@ -1,30 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- links to external resources -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Survey</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="text"></i>Getting to Know You</h1>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- links to external resources -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Friendifier</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text"></i>Getting to Know You</h1>
+    <hr>
+
+    <form class="text">
+      <div class="form-group">
+        <label for="name">Name (Required)</label>
+        <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Namey McNamerson">
+      </div>
+      <div class="form-group">
+        <label for="photoLink">Link to Your Photo (Required, so make it a good one)</label>
+        <input type="photo" class="form-control" id="photo" placeholder="www.example.com/myPhoto">
+      </div>
       <hr>
-    </div>
+
+      <div class="form-group">
+        <label class="my-1 mr-2 label" for="question1"> <strong>Question 1</strong> </label>
+        <div>Your mind is always buzzing with unexplored ideas and plans.</div>
+        <select class="custom-select my-1 mr-sm-2" id="question1">
+          <option selected>Choose...</option>
+          <option value="1">1 (strongly agree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (strongly disagree)</option>
+        </select>
+      </div>
+
+        <div class="form-group">
+          <label class="my-1 mr-2 label" for="question2"> <strong>Question 2</strong> </label>
+          <div>Generally speaking, you rely more on your experience than your imagination.
+          </div>
+          <select class="custom-select my-1 mr-sm-2" id="question2">
+            <option selected>Choose...</option>
+            <option value="1">1 (strongly agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly disagree)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="my-1 mr-2 label" for="question3"> <strong>Question 3</strong> </label>
+          <div>You find it easy to stay relaxed and focused even when there is some pressure.
+          </div>
+          <select class="custom-select my-1 mr-sm-2" id="question3">
+            <option selected>Choose...</option>
+            <option value="1">1 (strongly agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly disagree)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="my-1 mr-2 label" for="question4"> <strong>Question 4</strong> </label>
+          <div>You rarely do something just out of sheer curiosity.
+          </div>
+          <select class="custom-select my-1 mr-sm-2" id="question4">
+            <option selected>Choose...</option>
+            <option value="1">1 (strongly agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly disagree)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="my-1 mr-2 label" for="question5"> <strong>Question 5</strong> </label>
+          <div>People can rarely upset you.
+          </div>
+          <select class="custom-select my-1 mr-sm-2" id="question5">
+            <option selected>Choose...</option>
+            <option value="1">1 (strongly agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly disagree)</option>
+          </select>
+        </div>
 
 
 
-    <!-- bootstrap js and jq -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!-- custom javascript -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-  </body>
+      <hr>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+  </div>
+
+
+
+  <!-- bootstrap js and jq -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- custom javascript -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
 </html>
