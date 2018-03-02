@@ -11,25 +11,29 @@
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
   <title>Friendifier</title>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="text"></i>Getting to Know You</h1>
+    <h1 class="text"></i><strong>Getting to Know You</strong></h1>
     <hr>
 
     <form class="text">
+      <h2><strong>The Basics</strong></h2>
       <div class="form-group">
         <label for="name">Name (Required)</label>
-        <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Namey McNamerson">
+        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Namey McNamerson">
       </div>
       <div class="form-group">
         <label for="photoLink">Link to Your Photo (Required, so make it a good one)</label>
-        <input type="photo" class="form-control" id="photo" placeholder="www.example.com/myPhoto">
+        <input type="text" class="form-control" id="photo" placeholder="www.example.com/myPhoto">
       </div>
       <hr>
 
+      <h2><strong>Q&A</strong></h2>
       <div class="form-group">
         <label class="my-1 mr-2 label" for="question1"> <strong>Question 1</strong> </label>
         <div>Your mind is always buzzing with unexplored ideas and plans.</div>
@@ -169,13 +173,60 @@
           </select>
         </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button id='submit' type="submit" class="btn btn-primary">Submit</button>
     </form>
     <hr>
-
-
-
   </div>
+
+
+  <script type="text/javascript">
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newUserName = $("#name").val().trim();
+    var newUserPhoto = $("#photo").val().trim();
+    var newUserScores = [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(),
+    $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()]
+
+    var newUser = {
+      name: newUserName,
+      photo: newUserPhoto,
+      scores: newUserScores
+    };
+
+    console.log(newUser);
+
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    // $.post("/api/friends", newUser,
+    //   function(data) {
+    //
+    //     // If a table is available... tell user they are booked.
+    //     if (data) {
+    //       alert("Yay! You are officially booked!");
+    //     }
+    //
+    //     // If a table is available... tell user they on the waiting list.
+    //     else {
+    //       alert("Sorry you are on the wait list");
+    //     }
+    //
+    //     // Clear the form when submitting
+    //     $("#reserve-name").val("");
+    //     $("#reserve-phone").val("");
+    //     $("#reserve-email").val("");
+    //     $("#reserve-unique-id").val("");
+    //
+    //   });
+
+  });
+
+
+  </script>
 
 
 
@@ -183,8 +234,9 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- custom javascript -->
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+
 </body>
 
 </html>
