@@ -235,7 +235,9 @@ $(".submit").on("click", function(event) {
   $.post("/api/friends", newUser,
     function(data) {
       console.log(data);
-
+      $("#matchName").html(data.name);
+      $("#matchphoto").html('<img src=' + data.photo + ' alt="match image" height="100" width="100">');
+      $('#matchModal').modal(focus)
     });
 
 });
