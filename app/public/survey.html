@@ -4,15 +4,22 @@
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- links to external resources -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <!-- Font Awesome -->
-  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- css-custom -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
   <title>Friendifier</title>
 </head>
 
@@ -173,70 +180,65 @@
           </select>
         </div>
 
-      <button id='submit' type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary submit">Submit</button>
     </form>
     <hr>
   </div>
 
-
-  <script type="text/javascript">
-  $("#submit").on("click", function(event) {
-    event.preventDefault();
-
-    // Here we grab the form elements
-    var newUserName = $("#name").val().trim();
-    var newUserPhoto = $("#photo").val().trim();
-    var newUserScores = [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(),
-    $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()]
-
-    var newUser = {
-      name: newUserName,
-      photo: newUserPhoto,
-      scores: newUserScores
-    };
-
-    console.log(newUser);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
-    // $.post("/api/friends", newUser,
-    //   function(data) {
-    //
-    //     // If a table is available... tell user they are booked.
-    //     if (data) {
-    //       alert("Yay! You are officially booked!");
-    //     }
-    //
-    //     // If a table is available... tell user they on the waiting list.
-    //     else {
-    //       alert("Sorry you are on the wait list");
-    //     }
-    //
-    //     // Clear the form when submitting
-    //     $("#reserve-name").val("");
-    //     $("#reserve-phone").val("");
-    //     $("#reserve-email").val("");
-    //     $("#reserve-unique-id").val("");
-    //
-    //   });
-
-  });
-
-
-  </script>
-
-
-
-  <!-- bootstrap js and jq -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-
+  <!-- Modal -->
+<div class="modal fade text" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="matchModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="matchModalLabel">Your Friend Match</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Our patented Friendifier Matchihng algorithm has predicted that  this is your ideal friend match.</p>
+        <div id="matchName"></div>
+        <div id="matchPhoto"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 
 </html>
+
+<script type="text/javascript">
+$(".submit").on("click", function(event) {
+  event.preventDefault();
+
+  // Here we grab the form elements
+  var newUserName = $("#name").val().trim();
+  var newUserPhoto = $("#photo").val().trim();
+  var newUserScores = [$("#question1").val().trim(), $("#question2").val().trim(), $("#question3").val().trim(), $("#question4").val().trim(), $("#question5").val().trim(), $("#question6").val().trim(),
+  $("#question7").val().trim(), $("#question8").val().trim(), $("#question9").val().trim(), $("#question10").val().trim()];
+
+  var newUser = {
+    name: newUserName,
+    photo: newUserPhoto,
+    scores: JSON.stringify(newUserScores)
+  };
+
+  console.log('pre-.post', newUser);
+
+
+
+  $.post("/api/friends", newUser,
+    function(data) {
+      console.log(data);
+
+    });
+
+});
+
+
+</script>

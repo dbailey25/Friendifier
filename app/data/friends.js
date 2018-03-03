@@ -1,4 +1,4 @@
-var userArray =
+var friendArray =
 [{
   "name":"Kari",
   "photo":"https://photos.google.com/album/AF1QipNoIWz86Dyv8pP9_LY41nXQXzUiv8yQjHPFFGzf/photo/AF1QipNl9G_gH1yfq-iDaPhcWil9Rk-2O10JQyMVukwm",
@@ -23,4 +23,6 @@ var userArray =
   "name":"Van",
   "photo":"https://photos.google.com/album/AF1QipNoIWz86Dyv8pP9_LY41nXQXzUiv8yQjHPFFGzf/photo/AF1QipOlB19cKx40loGkIxFhfEUIneQcnc-reaEPko7_",
   "scores":[4,1,1,3,2,5,2,1,3,4]
-}]
+}];
+
+module.exports = friendArray;
