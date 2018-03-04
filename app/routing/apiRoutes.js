@@ -33,10 +33,11 @@ var userScores = newUser.scores;
     }; // close loop, compare score arrays
 
   // determine the index of the smallest totalDifference
+  console.log('scoreComparisons', scoreComparisons);
     var bestMatchIndex = 0;
-    var score0 = friendPool[0];
-    for (var k = 0; k < friendPool.length; k++) {
-      if (friendPool[k] < score0) {
+    var score0 = scoreComparisons[0];
+    for (var k = 1; k < scoreComparisons.length; k++) {
+      if (scoreComparisons[k] < score0) {
         bestMatchIndex = k;
       } // close if
     } // close loop
