@@ -13,14 +13,14 @@ module.exports = function(app) {
 
 console.log(newUser);
 console.log(newUser.scores);
-var userScores = [];
+var userScores = newUser.scores;
 
-for (var l = 0; l < newUser.scores.length; l++) {
-  var deStringify = parseInt(newUser.scores[l]);
-  if (deStringify >= 1 && deStringify <= 5) {
-    userScores.push(deStringify)
-  }
-}
+// for (var l = 0; l < newUser.scores.length; l++) {
+//   var deStringify = parseInt(newUser.scores[l]);
+//   if (deStringify >= 1 && deStringify <= 5) {
+//     userScores.push(deStringify)
+//   }
+// }
 
   // compare newUser's score array to each potential friend
     for (var i = 0; i < friendPool.length; i++) {
