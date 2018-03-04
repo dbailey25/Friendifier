@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- css-custom -->
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -27,20 +31,20 @@
       <hr class="my-4">
       <p class="text"><strong>We'll need to get to know you a little bit; click below to get started.</strong></p>
       <p class="lead">
-        <a id='launchSurvey' class="btn btn-primary btn-lg text" href="#" role="button">Friend Me</a>
+        <!-- <a id='launchSurvey' class="btn btn-primary btn-lg text" href="#" role="button">Friend Me</a> -->
+
+        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Friend Me</button></a>
       </p>
     </div>
   </div>
 
+<script type="text/javascript">
+$("#launchSurvey").on("click", function(event) {
+
+});
+</script>
 
 
-
-  <!-- bootstrap js and jq -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- custom javascript -->
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
