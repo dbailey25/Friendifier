@@ -2,27 +2,27 @@ var friendArray =
 [{
   "name":"Kari",
   "photo":"../data/images/Kari.jpg",
-  "scores":[5,1,4,4,5,1,2,5,4,1]
+  "scores":[5,5,5,5,5,5,5,5,5,5]
 },{
   "name":"Demian",
   "photo":"../data/images/Demian.jpg",
-  "scores":[3,2,2,5,5,1,1,5,4,2]
+  "scores":[2,2,2,2,2,2,2,2,2,2]
 },{
   "name":"Alex",
   "photo":"../data/images/Alex.jpg",
-  "scores":[5,4,5,3,4,2,1,4,1,4]
+  "scores":[4,4,4,4,4,4,4,4,4,4]
 },{
   "name":"Tamara",
   "photo":"../data/images/Tamara.jpg",
-  "scores":[1,4,3,3,2,5,5,4,1,3]
+  "scores":[1,4,2,3,2,5,5,4,1,3]
 },{
   "name":"Heather",
   "photo":"../data/images/Heather.jpg",
-  "scores":[2,2,5,5,4,3,5,5,3,2]
+  "scores":[1,1,1,1,1,1,1,1,1,1]
 },{
   "name":"Van",
   "photo":"../data/images/Van.jpg",
-  "scores":[4,1,1,3,2,5,2,1,3,4]
+  "scores":[3,3,3,3,3,3,3,3,3,3]
 }];
 
 // [{

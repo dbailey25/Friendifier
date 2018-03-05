@@ -36,9 +36,12 @@ var userScores = newUser.scores;
   console.log('scoreComparisons', scoreComparisons);
     var bestMatchIndex = 0;
     var score0 = scoreComparisons[0];
-    for (var k = 1; k < scoreComparisons.length; k++) {
-      if (scoreComparisons[k] < score0) {
+    console.log('score0', score0);
+    for (var k = 0; k < scoreComparisons.length; k++) {
+      if (scoreComparisons[k] <= score0) {
+        score0 = scoreComparisons[k];
         bestMatchIndex = k;
+        console.log(bestMatchIndex);
       } // close if
     } // close loop
 
