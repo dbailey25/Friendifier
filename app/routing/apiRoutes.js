@@ -11,16 +11,7 @@ module.exports = function(app) {
     var newUser = (req.body);
     var scoreComparisons = [];
 
-console.log(newUser);
-console.log(newUser.scores);
 var userScores = newUser.scores;
-
-// for (var l = 0; l < newUser.scores.length; l++) {
-//   var deStringify = parseInt(newUser.scores[l]);
-//   if (deStringify >= 1 && deStringify <= 5) {
-//     userScores.push(deStringify)
-//   }
-// }
 
   // compare newUser's score array to each potential friend
     for (var i = 0; i < friendPool.length; i++) {
@@ -33,19 +24,19 @@ var userScores = newUser.scores;
     }; // close loop, compare score arrays
 
   // determine the index of the smallest totalDifference
-  console.log('scoreComparisons', scoreComparisons);
     var bestMatchIndex = 0;
     var score0 = scoreComparisons[0];
-    console.log('score0', score0);
     for (var k = 0; k < scoreComparisons.length; k++) {
       if (scoreComparisons[k] <= score0) {
         score0 = scoreComparisons[k];
         bestMatchIndex = k;
-        console.log(bestMatchIndex);
       } // close if
     } // close loop
 
-    // return the data for the best match
-      res.json(friendPool[bestMatchIndex]);
+  // return the data for the best match
+    res.json(friendPool[bestMatchIndex]);
+
+  // push new user to friend array\
+    friendPool.push(newUser);
   });
 };
