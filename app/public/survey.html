@@ -199,7 +199,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id='close' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -240,7 +240,14 @@ $(".submit").on("click", function(event) {
       $('#matchModal').modal(focus)
     });
 
-});
+}); // close on click, submit
 
+$("#close").on("click", function(event) {
+  event.preventDefault();
+  $("#name").val('');
+  $("#photo").val('');
+  [$("#question1").val(''), $("#question2").val(''), $("#question3").val(''), $("#question4").val(''), $("#question5").val(''), $("#question6").val(''),
+  $("#question7").val(''), $("#question8").val(''), $("#question9").val(''), $("#question10").val('')];
+}); // close on click, close
 
 </script>
