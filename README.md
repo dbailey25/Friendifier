@@ -11,11 +11,8 @@
 Friendifier is a web application that matches you with potential new friends. Friendifier uses a Node JS server to respond to API calls from the front end website.
 
 #### How to use Friendifier?
-1. Open your CLI
-1. Navigate to the installed directory
-1. Enter "node server.js" to initiate the Node server
 1. Navigate to https://obscure-taiga-74245.herokuapp.com/ in your web browser to launch the website
-1. Follow the on screen prompts to complete our survey and find your new friend
+1. Follow the on-screen prompts to complete the short survey and find your new friend
 
 #### Who maintains Friendifier?
 This project is diligently maintained be me. :sweat_smile:
